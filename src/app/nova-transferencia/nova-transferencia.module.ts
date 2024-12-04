@@ -12,12 +12,13 @@ export class NovaTransferenciaComponent {
 
   valor!:number;
 
-  destino!:number
+  destino!:number;
 
 
   transferir(){
     console.log("Solicitada nova transferência")
-    console.log('Valor:',this.valor)
-    console.log('destino', this.destino)
+    const valorEmitir = {valor:this.valor,destino:this.destino};
+    this.aoTransferir.emit(valorEmitir);
+
   }
 }
